@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="wrap_content"
+	android:orientation="vertical">
+	<TextView android:layout_height="wrap_content" android:id="@+id/textView1"
+		android:layout_width="wrap_content" android:text="How did it go:" />
+
+	<EditText android:layout_height="100px" android:layout_width="match_parent"
+		android:id="@+id/txtDesc" />
+
+		<LinearLayout android:layout_height="wrap_content"
+			android:layout_width="match_parent" android:id="@+id/content1"
+			android:orientation="horizontal">
+			<TextView android:layout_height="wrap_content" android:id="@+id/textView2"
+				android:layout_width="wrap_content" android:text="TextView"
+				android:layout_gravity="center_vertical" />
+
+			<Spinner android:layout_height="wrap_content"
+				android:layout_width="wrap_content" android:id="@+id/spinnerWorkoutType" />
+
+			<TextView android:layout_height="wrap_content" android:id="@+id/textView2"
+				android:layout_width="wrap_content" android:text="TextView"
+				android:layout_gravity="center_vertical" />
+
+			<EditText android:layout_height="wrap_content"
+				android:layout_gravity="right" android:id="@+id/editText2"
+				android:layout_width="wrap_content" />
+		</LinearLayout>
+
+		<LinearLayout android:id="@+id/content3" android:layout_height="wrap_content"
+			android:layout_width="match_parent" android:orientation="horizontal">
+			<TextView android:layout_height="wrap_content" android:id="@+id/textView2"
+				android:layout_width="wrap_content" android:text="Distance:"
+				android:layout_gravity="center_vertical" />
+			<EditText android:layout_height="wrap_content" android:id="@+id/txtDistance"
+				android:layout_width="80px" />
+			<Spinner android:layout_height="wrap_content"
+				android:layout_width="wrap_content" android:id="@+id/spinnerDistance" 
+				 />
+
+			<TextView android:layout_height="wrap_content" android:id="@+id/textView2"
+				android:layout_width="wrap_content" android:text="Time:"
+				android:layout_gravity="center_vertical" />
+			<EditText android:layout_height="wrap_content" android:id="@+id/txtHour"
+				android:layout_width="50px" />
+			<EditText android:layout_height="wrap_content" android:id="@+id/txtMin"
+				android:layout_width="50px" />
+			<EditText android:layout_height="wrap_content" android:id="@+id/txtSec"
+				android:layout_width="50px" />
+		</LinearLayout>
+		
+		<LinearLayout android:layout_width="match_parent"
+		android:layout_height="wrap_content" android:id="@+id/content5" 
+		android:orientation="horizontal">
+			<TextView android:layout_height="wrap_content" android:id="@+id/textView2"
+				android:layout_width="wrap_content" android:text="Effort:"
+				android:layout_gravity="center_vertical" />
+			<SeekBar android:layout_height="wrap_content" android:id="@+id/seekEffort"
+				android:layout_width="100px"/>
+		</LinearLayout>
+	</LinearLayout>
