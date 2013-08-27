@@ -1,29 +1,31 @@
 package com.mileminder;
 
 
-import java.io.InputStream;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.app.Activity;
-import android.graphics.drawable.Drawable;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class ImageTextListAdapter extends ArrayAdapter<JSONObject> {
 
 	private List<Friend> friends =  new ArrayList<Friend>();
 	
-	public ImageTextListAdapter(Activity activity, ArrayList<JSONObject> friends) {
+	public ImageTextListAdapter(Activity activity, List<JSONObject> friends) {
 		super(activity, 0, friends);
 	}
 
@@ -36,11 +38,11 @@ public class ImageTextListAdapter extends ArrayAdapter<JSONObject> {
 		View rowView = inflater.inflate(R.layout.friends, null);
 		JSONObject imageAndText = getItem(position);
 		// Load the image and set it on the ImageView
-		ImageView imageView = (ImageView) rowView.findViewById(R.id.photo);
+		ImageView imageView = (ImageView) rowView.findViewById(R.id.friend_photo);
 		String photoUrl = "";
 		try {
 			photoUrl = (String) imageAndText.get("photo_url");
-			imageView.setImageDrawable(loadImageFromWeb(photoUrl));
+			imageView.setImageBitmap(loadImageFromWeb(photoUrl));
 		} catch (JSONException e) {
 			photoUrl = "";
 		}
@@ -63,13 +65,11 @@ public class ImageTextListAdapter extends ArrayAdapter<JSONObject> {
 		return rowView;
 	}
 
-	private Drawable loadImageFromWeb(String url){
+	private Bitmap loadImageFromWeb(String url){
 		try{
-			InputStream is = (InputStream) new URL(url).getContent();
-			Drawable d = Drawable.createFromStream(is, "src name");
-			return d;
+            AsyncTask<String, Integer, InputStream> imageTask = new ImageLoader().execute(url);
+            return BitmapFactory.decodeStream(imageTask.get());
 		}catch (Exception e) {
-			System.out.println("Exc="+e);
 			return null;
 		}
 	}
@@ -81,4 +81,15 @@ public class ImageTextListAdapter extends ArrayAdapter<JSONObject> {
 	public List<Friend> getFriends() {
 		return friends;
 	}
+
+    private class ImageLoader extends AsyncTask<String,Integer, InputStream> {
+        @Override
+        protected InputStream doInBackground(String... urls) {
+            try {
+                return new URL(urls[0]).openConnection().getInputStream();
+            } catch (IOException e) {
+                return null;
+            }
+        }
+    }
 }

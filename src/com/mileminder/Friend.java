@@ -8,13 +8,8 @@ public class Friend {
 	private String goal;
 	private String photoUrl;
 	private String pageUrl;
-	
-	public Friend(){
-		
-	}
-	
-	public Friend(String displayName, String userName, String location) {
-		super();
+
+    public Friend(String displayName, String userName, String location) {
 		this.displayName = displayName;
 		this.userName = userName;
 		this.location = location;

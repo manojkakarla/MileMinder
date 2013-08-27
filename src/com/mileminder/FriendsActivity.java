@@ -7,8 +7,6 @@ import android.widget.ListView;
 import android.widget.Toast;
 import org.json.JSONObject;
 
-import java.text.MessageFormat;
-import java.util.ArrayList;
 import java.util.List;
 
 public class FriendsActivity extends ListActivity {
@@ -25,10 +23,10 @@ public class FriendsActivity extends ListActivity {
 		FriendsView fv = new FriendsView();
 		Bundle b = getIntent().getExtras();
 		String user = b.getString(MileMinder.USER_NAME);
-		String urlString = MessageFormat.format(
-				"https://api.dailymile.com/people/{0}/friends.json",user != null ? user : "manojk"); 
-		System.out.println(urlString);
-		ArrayList<JSONObject> friends = fv.retrieveJSONArray(urlString);
+		String urlString = String.format(
+				"https://api.dailymile.com/people/%s/friends.json",user != null && !user.isEmpty() ? user : "manojk");
+		List<JSONObject> friends = fv.retrieveJSONArray(urlString);
+        if(friends.size() > 20) friends = friends.subList(0, 20);
 		 adapter = new ImageTextListAdapter(this,friends);
 		setListAdapter(adapter);
 	}
