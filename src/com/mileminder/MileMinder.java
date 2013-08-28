@@ -19,11 +19,11 @@ public class MileMinder extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.login);
-		
+
 		findViewById(R.id.buttonLogin).setOnClickListener(new OnClickListener() {
 
 			public void onClick(View v) {
-				Intent myIntent = new Intent(getApplicationContext(), FriendsActivity.class);
+				Intent myIntent = new Intent(getApplicationContext(), FriendsListView.class);
 				Editable user = ((EditText)findViewById(R.id.username)).getText();
 				Toast.makeText(getBaseContext(), user.toString(), Toast.LENGTH_LONG);
 				myIntent.putExtra(USER_NAME, user.toString());
@@ -59,7 +59,7 @@ public class MileMinder extends Activity {
 	}
 
 	private void newPost() {
-		Intent myIntent = new Intent(getApplicationContext(), Post.class);
+		Intent myIntent = new Intent(getApplicationContext(), NewPostView.class);
 		startActivity(myIntent);    
 	}
 

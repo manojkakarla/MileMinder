@@ -1,4 +1,4 @@
-package com.mileminder;
+package com.mileminder.domain;
 
 public class Friend {
 

@@ -1,4 +1,4 @@
-package com.mileminder;
+package com.mileminder.infra;
 
 
 import android.os.AsyncTask;
@@ -10,7 +10,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
-public class FriendsView {
+public class FriendsLoader {
 
 	private static final String TAG = "MileMeter";
 
@@ -18,7 +18,7 @@ public class FriendsView {
 		AsyncTask<String, Integer, String> resultTask = new FriendFetcher().execute(urlString);
         ArrayList<JSONObject> friends = new ArrayList<JSONObject>();
         try {
-            String result = resultTask.get(10, TimeUnit.SECONDS);
+            String result = resultTask.get(20, TimeUnit.SECONDS);
             if (result != null) {
                 JSONObject json = new JSONObject(result);
                 JSONArray jobsArray = json.getJSONArray("friends");

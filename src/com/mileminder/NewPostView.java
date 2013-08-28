@@ -7,7 +7,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 
-public class Post extends Activity {
+public class NewPostView extends Activity {
 	
 	/** Called when the activity is first created. */
 	@Override
