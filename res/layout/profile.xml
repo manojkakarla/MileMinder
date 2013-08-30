@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent">
+
+    <LinearLayout
+               android:id="@+id/thumbnail"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:padding="3dip"
+           android:layout_alignParentLeft="true"
+           android:background="@drawable/image_bg"
+           android:layout_marginRight="5dip">
+
+        <ImageView
+                   android:id="@+id/profile_pic"
+                   android:layout_width="200dip"
+                   android:layout_height="200dip"/>
+            </LinearLayout>
+
+    <TextView
+           android:id="@+id/name"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignTop="@+id/thumbnail"
+           android:layout_toRightOf="@+id/thumbnail"
+           android:textColor="#040404"
+           android:typeface="sans"
+           android:textSize="30dip"
+           android:textStyle="bold"/>
+
+       <!-- Artist Name -->
+       <TextView
+           android:id="@+id/location"
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:layout_below="@id/name"
+           android:textColor="#343434"
+           android:textSize="15dip"
+           android:layout_marginTop="1dip"
+           android:layout_toRightOf="@+id/thumbnail"/>
+    <TextView
+           android:id="@+id/goal"
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:layout_below="@id/thumbnail"
+           android:textColor="#343434"
+           android:textSize="15dip"
+           android:layout_marginTop="1dip"/>
+    <TextView
+           android:id="@+id/url"
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:layout_below="@id/goal"
+           android:textColor="#343434"
+           android:textSize="15dip"
+           android:layout_marginTop="1dip"/>
+
+    <ListView android:id="@+id/entry_list"
+            android:layout_width="fill_parent"
+          	android:layout_height="fill_parent"
+          	android:paddingLeft="10dp"/>
+
+</RelativeLayout>

@@ -42,11 +42,11 @@
 				android:layout_width="wrap_content" android:text="Time:"
 				android:layout_gravity="center_vertical" />
 			<EditText android:layout_height="wrap_content" android:id="@+id/txtHour"
-				android:layout_width="50dip" android:inputType="number"/>
+				android:layout_width="40dip" android:inputType="number"/>
 			<EditText android:layout_height="wrap_content" android:id="@+id/txtMin"
-				android:layout_width="50dip" android:inputType="number"/>
+				android:layout_width="40dip" android:inputType="number"/>
 			<EditText android:layout_height="wrap_content" android:id="@+id/txtSec"
-				android:layout_width="50dip" android:inputType="number"/>
+				android:layout_width="40dip" android:inputType="number"/>
 		</LinearLayout>
 		
 		<LinearLayout android:layout_width="match_parent"
@@ -56,6 +56,6 @@
 				android:layout_width="wrap_content" android:text="Effort:"
 				android:layout_gravity="center_vertical" />
 			<SeekBar android:layout_height="wrap_content" android:id="@+id/seekEffort"
-				android:layout_width="200dip"/>
+				android:layout_width="200dip" android:indeterminate="false"/>
 		</LinearLayout>
 	</LinearLayout>

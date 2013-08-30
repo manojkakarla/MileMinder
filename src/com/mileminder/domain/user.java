@@ -1,15 +1,23 @@
 package com.mileminder.domain;
 
-public class Friend {
+import com.owlike.genson.annotation.JsonProperty;
 
+public class User {
+
+    @JsonProperty("display_name")
 	private String displayName;
+    @JsonProperty("username")
 	private String userName;
 	private String location;
-	private String goal;
+    @JsonProperty("photo_url")
 	private String photoUrl;
-	private String pageUrl;
+	private String goal;
+	private String url;
 
-    public Friend(String displayName, String userName, String location) {
+    public User() {
+    }
+
+    public User(String displayName, String userName, String location) {
 		this.displayName = displayName;
 		this.userName = userName;
 		this.location = location;
@@ -45,11 +53,11 @@ public class Friend {
 	public void setPhotoUrl(String photoUrl) {
 		this.photoUrl = photoUrl;
 	}
-	public String getPageUrl() {
-		return pageUrl;
+	public String getUrl() {
+		return url;
 	}
-	public void setPageUrl(String pageUrl) {
-		this.pageUrl = pageUrl;
+	public void setUrl(String url) {
+		this.url = url;
 	}
-	
+
 }

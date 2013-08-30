@@ -1,31 +1,30 @@
-package com.mileminder;
+package com.mileminder.view;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
+import android.view.*;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.Toast;
+import com.mileminder.R;
 
 public class MileMinder extends Activity {
 	protected static final String USER_NAME = "username";
+    private static final String YOUR_API_KEY = "Y4i6ErZNa9kuyIsJr2htG6G71QEHszQ4zjIT9dg0";
+    private static final String YOUR_API_SECRET = "1phJOHA1VqNxFHzvge3MARiJMvJCP4iodIYgfXCR";
 
-	@Override
+    @Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.login);
 
-		findViewById(R.id.buttonLogin).setOnClickListener(new OnClickListener() {
-
+        findViewById(R.id.buttonLogin).setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Intent myIntent = new Intent(getApplicationContext(), FriendsListView.class);
 				Editable user = ((EditText)findViewById(R.id.username)).getText();
-				Toast.makeText(getBaseContext(), user.toString(), Toast.LENGTH_LONG);
+				Toast.makeText(getBaseContext(), user.toString(), Toast.LENGTH_LONG).show();
 				myIntent.putExtra(USER_NAME, user.toString());
 				startActivity(myIntent);    
 			}

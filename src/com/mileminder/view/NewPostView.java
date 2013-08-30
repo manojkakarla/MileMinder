@@ -1,10 +1,11 @@
-package com.mileminder;
+package com.mileminder.view;
 
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import com.mileminder.R;
 
 
 public class NewPostView extends Activity {
