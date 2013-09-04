@@ -12,13 +12,27 @@ import com.mileminder.R;
 import com.mileminder.domain.Entry;
 import com.mileminder.domain.Workout;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 
 public class EntryListAdapter extends ArrayAdapter<Entry> {
 
     private List<Entry> entries = new ArrayList<Entry>();
+    private static final Map<String, Integer> idMap = new HashMap<String, Integer>();
+    static {
+           idMap.put("running", R.drawable.running);
+           idMap.put("walking", R.drawable.walking);
+           idMap.put("cycling", R.drawable.cycling);
+           idMap.put("crossfit", R.drawable.crossfit);
+           idMap.put("swimming", R.drawable.swimming);
+
+           idMap.put("great", R.drawable.great);
+           idMap.put("good", R.drawable.good);
+           idMap.put("alright", R.drawable.alright);
+           idMap.put("blah", R.drawable.blah);
+           idMap.put("tired", R.drawable.tired);
+           idMap.put("injured", R.drawable.injured);
+    }
 
     public EntryListAdapter(Activity activity, List<Entry> entries) {
         super(activity, 0, entries);
@@ -40,12 +54,12 @@ public class EntryListAdapter extends ArrayAdapter<Entry> {
         setText(rowView, R.id.message, entry.getMessage());
 
         ImageView activityView = (ImageView) rowView.findViewById(R.id.activity_icon);
-        int activityId = rowView.getResources().getIdentifier("com.mileminder.infra:drawable/" + workout.getActivityType().toLowerCase() + ".png", null, null);
-        activityView.setImageResource(activityId);
-        ImageView imageView = (ImageView) rowView.findViewById(R.id.felt_icon);
-        int id = rowView.getResources().getIdentifier("com.mileminder.infra:drawable/" + workout.getFelt() + ".png", null, null);
-        imageView.setImageResource(id);
+        activityView.setImageResource(idMap.get(workout.getActivityType().toLowerCase()));
 
+        if (workout.getFelt() != null) {
+            ImageView imageView = (ImageView) rowView.findViewById(R.id.felt_icon);
+            imageView.setImageResource(idMap.get(workout.getFelt()));
+        }
         return rowView;
     }
 

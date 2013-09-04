@@ -1,5 +1,7 @@
 package com.mileminder.domain;
 
+import java.text.DecimalFormat;
+
 public class Distance {
     private double value;
     private String units;
@@ -30,6 +32,6 @@ public class Distance {
 
     @Override
     public String toString() {
-        return value + " " + units;
+        return new DecimalFormat("#.##").format(value) + " " + units;
     }
 }

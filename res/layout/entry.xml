@@ -20,12 +20,14 @@
         <ImageView
                 android:id="@+id/activity_icon"
                 android:layout_width="32dip"
-                android:layout_height="32dip"/>
+                android:layout_height="32dip"
+                android:paddingBottom="10dip"/>
 
         <ImageView
                 android:id="@+id/felt_icon"
                 android:layout_width="32dip"
-                android:layout_height="32dip"/>
+                android:layout_height="32dip"
+                android:paddingTop="10dip"/>
 
     </LinearLayout>
 
@@ -43,7 +45,8 @@
             android:id="@+id/distance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/title"
+            android:layout_alignLeft="@+id/title"
+            android:layout_below="@+id/title"
             android:paddingRight="15dip"
             android:textColor="#040404"
             android:typeface="sans"
@@ -53,7 +56,8 @@
             android:id="@+id/time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/title"
+            android:layout_below="@+id/title"
+            android:layout_toRightOf="@+id/distance"
             android:paddingLeft="15dip"
             android:textColor="#040404"
             android:typeface="sans"
@@ -64,6 +68,7 @@
             android:id="@+id/message"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/title"
             android:layout_below="@id/distance"
             android:textColor="#343434"
             android:textSize="10dip"

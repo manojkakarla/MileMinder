@@ -23,7 +23,7 @@ public class Workout {
     }
 
     public String formatDistance() {
-        return distance.toString();
+        return distance != null ? distance.toString() : "";
     }
 
     public void setDistance(Distance distance) {
