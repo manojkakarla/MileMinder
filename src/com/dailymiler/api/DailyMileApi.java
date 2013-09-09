@@ -1,4 +1,4 @@
-package com.mileminder.api;
+package com.dailymiler.api;
 
 import org.scribe.builder.api.DefaultApi10a;
 import org.scribe.builder.api.LinkedInApi;

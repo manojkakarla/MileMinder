@@ -1,4 +1,4 @@
-package com.mileminder.domain;
+package com.dailymiler.domain;
 
 
 public class Entry {

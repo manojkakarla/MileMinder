@@ -1,4 +1,4 @@
-package com.mileminder.infra;
+package com.dailymiler.infra;
 
 
 import android.app.Activity;
@@ -8,9 +8,9 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.mileminder.R;
-import com.mileminder.domain.Entry;
-import com.mileminder.domain.Workout;
+import com.dailymiler.R;
+import com.dailymiler.domain.Entry;
+import com.dailymiler.domain.Workout;
 
 import java.util.*;
 

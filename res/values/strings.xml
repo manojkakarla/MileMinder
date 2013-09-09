@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, login!</string>
-    <string name="app_name">MileMinder</string>
-    <string name="newPost">New Post</string>
+    <string name="hello">login</string>
+    <string name="app_name">DailyMiler</string>
+    <string name="newPost">Posy workout</string>
     <string name="help">Help</string>
     <string name="Calories">Calories:</string>
 </resources>

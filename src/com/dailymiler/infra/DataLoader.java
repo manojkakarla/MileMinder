@@ -1,4 +1,4 @@
-package com.mileminder.infra;
+package com.dailymiler.infra;
 
 
 import android.os.AsyncTask;
@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 
 public class DataLoader<T> {
 
-    private static final String TAG = "MileMinder";
+    private static final String TAG = "DailyMiler";
 
     public T fetchData(String urlString, Class<T> aClass) {
         AsyncTask<String, Integer, T> result = new FriendFetcher<T>(aClass).execute(urlString);

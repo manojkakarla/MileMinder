@@ -1,4 +1,4 @@
-package com.mileminder.view;
+package com.dailymiler.view;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -6,12 +6,12 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import com.koushikdutta.urlimageviewhelper.UrlImageViewHelper;
-import com.mileminder.R;
-import com.mileminder.domain.Entry;
-import com.mileminder.domain.EntryList;
-import com.mileminder.domain.User;
-import com.mileminder.infra.DataLoader;
-import com.mileminder.infra.EntryListAdapter;
+import com.dailymiler.R;
+import com.dailymiler.domain.Entry;
+import com.dailymiler.domain.EntryList;
+import com.dailymiler.domain.User;
+import com.dailymiler.infra.DataLoader;
+import com.dailymiler.infra.EntryListAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

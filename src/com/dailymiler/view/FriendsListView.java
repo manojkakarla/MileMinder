@@ -1,4 +1,4 @@
-package com.mileminder.view;
+package com.dailymiler.view;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,11 +7,11 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
-import com.mileminder.R;
-import com.mileminder.domain.FriendsList;
-import com.mileminder.domain.User;
-import com.mileminder.infra.DataLoader;
-import com.mileminder.infra.FriendListAdapter;
+import com.dailymiler.R;
+import com.dailymiler.domain.FriendsList;
+import com.dailymiler.domain.User;
+import com.dailymiler.infra.DataLoader;
+import com.dailymiler.infra.FriendListAdapter;
 
 import java.util.List;
 
@@ -35,7 +35,7 @@ public class FriendsListView extends Activity implements OnItemClickListener {
 
     private String buildUrl() {
         Bundle b = getIntent().getExtras();
-        String user = b.getString(MileMinder.USER_NAME);
+        String user = b.getString(DailyMiler.USER_NAME);
         return String.format(
                 "https://api.dailymile.com/people/%s/friends.json", user != null && !user.isEmpty() ? user : "manojk");
     }
